@@ -7,7 +7,7 @@ from textblob import TextBlob
 # ------------------------
 # 🔑 API KEY
 # ------------------------
-client = genai.Client(api_key="AIzaSyC7Vz9e8-4waUoUW1cFEBxJf2nHmx5ccZ8")  # Replace with your key
+client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))  
 models = client.models.list()
 for m in models:
     print("Model name:", m.name)
@@ -75,4 +75,5 @@ if audio_file:
            st.write(st.session_state.transcript)
 
       
+
 
